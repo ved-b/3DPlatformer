@@ -42,8 +42,20 @@ public class PlayerControl : MonoBehaviour
             moveDirection -= right;
         }
 
+        // Jump
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // Check if the player is on the ground
+            if (Physics.Raycast(transform.position, Vector3.down, 0.6f))
+            {
+                Vector3 jump = new Vector3(0, jumpForce, 0);
+                GetComponent<Rigidbody>().AddForce(jump, ForceMode.Impulse);
+            }
+        }
+
         // Move the player
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        
         
     }
 }
