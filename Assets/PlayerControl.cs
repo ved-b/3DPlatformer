@@ -46,7 +46,7 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // Check if the player is on the ground
-            if (Physics.Raycast(transform.position, Vector3.down, 0.6f))
+            if (Physics.Raycast(transform.position, Vector3.down, 2f))
             {
                 Vector3 jump = new Vector3(0, jumpForce, 0);
                 GetComponent<Rigidbody>().AddForce(jump, ForceMode.Impulse);
