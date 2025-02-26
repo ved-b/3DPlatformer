@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private float jumpForce = 10f;
     [SerializeField] private Transform cameraTransform;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,8 +45,8 @@ public class PlayerControl : MonoBehaviour
         // Jump
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // Check if the player is on the ground
-            if (Physics.Raycast(transform.position, Vector3.down, 2f))
+            // add ground check
+            if (Physics.Raycast(transform.position, Vector3.down, 1f))
             {
                 Vector3 jump = new Vector3(0, jumpForce, 0);
                 GetComponent<Rigidbody>().AddForce(jump, ForceMode.Impulse);

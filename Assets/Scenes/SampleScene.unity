@@ -206,8 +206,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22975293, y: -4.1683256e-23, z: 9.840082e-24, w: 0.973249}
-  m_LocalPosition: {x: 0.9952535, y: 1.2980366, z: -7.1038833}
+  m_LocalRotation: {x: 0.1784248, y: -0.000000028813709, z: 0.0000000052249214, w: 0.98395354}
+  m_LocalPosition: {x: 0.9952535, y: 2.5, z: -3.103883}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -301,7 +301,6 @@ GameObject:
   - component: {fileID: 397484100}
   - component: {fileID: 397484099}
   - component: {fileID: 397484098}
-  - component: {fileID: 397484101}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Untagged
@@ -318,7 +317,7 @@ Transform:
   m_GameObject: {fileID: 397484096}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.69, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -400,33 +399,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397484096}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &397484101
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397484096}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,14 +667,14 @@ MonoBehaviour:
   Radius: 10
   Orbits:
     Top:
-      Radius: 8
-      Height: 4
+      Radius: 4
+      Height: 1.5
     Center:
-      Radius: 8
-      Height: 4
+      Radius: 4
+      Height: 1.5
     Bottom:
-      Radius: 8
-      Height: 4
+      Radius: 4
+      Height: 1.5
     SplineCurvature: 0
   RecenteringTarget: 2
   HorizontalAxis:
@@ -786,8 +758,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470593593}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2297529, y: -4.8235752e-23, z: 3.7596944e-23, w: 0.973249}
-  m_LocalPosition: {x: 0.9952535, y: 1.2980366, z: -7.1038833}
+  m_LocalRotation: {x: 0.1784248, y: -0.000000028813709, z: 0.000000005224922, w: 0.98395354}
+  m_LocalPosition: {x: 0.9952535, y: 2.5, z: -3.103883}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -961,6 +933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1993555675}
   - component: {fileID: 1993555676}
+  - component: {fileID: 1993555677}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -977,7 +950,7 @@ Transform:
   m_GameObject: {fileID: 1993555674}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9952535, y: -2.7019634, z: 0.8961169}
+  m_LocalPosition: {x: 0.9952535, y: 1, z: 0.8961169}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -999,6 +972,33 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 5
   cameraTransform: {fileID: 470593599}
+--- !u!54 &1993555677
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993555674}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
