@@ -5,6 +5,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private Transform cameraTransform;
+    private int jumpCount = 0;
+    [SerializeField] private int maxJumpCount = 2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,10 +48,15 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // Check if the player is on the ground
-            if (Physics.Raycast(transform.position, Vector3.down, 1f))
+            if (Physics.Raycast(transform.position, Vector3.down, 1f) && jumpCount < maxJumpCount)
             {
+                jumpCount++;
                 Vector3 jump = new Vector3(0, jumpForce, 0);
                 GetComponent<Rigidbody>().AddForce(jump, ForceMode.Impulse);
+            }
+            else
+            {
+                jumpCount = 0;
             }
         }
         // Move the player
