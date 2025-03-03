@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -7,7 +8,11 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     private int jumpCount = 1;
     [SerializeField] private int maxJumpCount = 2;
-    
+
+    private bool dashing;
+    private float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
     void Update()
     {
         // Reset jump counter when the player is grounded.
@@ -51,6 +56,11 @@ public class PlayerControl : MonoBehaviour
             GetComponent<Rigidbody>().AddForce(jump, ForceMode.Impulse);
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !dashing && !IsGrounded()) 
+        {
+            StartCoroutine(Dash(forward));
+        }
+
         // Move the player.
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
     }
@@ -59,5 +69,16 @@ public class PlayerControl : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, 1.05f);
+    }
+
+    private IEnumerator Dash(Vector3 forward) {
+        dashing = true;
+
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.linearVelocity = new Vector3(forward.x * dashingPower, 0, forward.z * dashingPower);
+        yield return new WaitForSeconds(dashingTime);
+        rb.linearVelocity = Vector3.zero;
+        yield return new WaitForSeconds(dashingCooldown);
+        dashing = false;
     }
 }
