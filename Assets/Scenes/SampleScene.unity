@@ -590,7 +590,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
@@ -1969,6 +1969,7 @@ GameObject:
   - component: {fileID: 1993555676}
   - component: {fileID: 1993555677}
   - component: {fileID: 1993555678}
+  - component: {fileID: 1993555679}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2004,8 +2005,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5946753c357473784f0e3275685600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 10
+  moveSpeed: 9
+  jumpForce: 5
   cameraTransform: {fileID: 470593599}
   maxJumpCount: 2
 --- !u!54 &1993555677
@@ -2048,6 +2049,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinText: {fileID: 293888955}
+--- !u!136 &1993555679
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993555674}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2052007661
 PrefabInstance:
   m_ObjectHideFlags: 0
